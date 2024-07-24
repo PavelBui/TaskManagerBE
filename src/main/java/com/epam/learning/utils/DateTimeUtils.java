@@ -11,21 +11,21 @@ import java.util.Objects;
 @UtilityClass
 public class DateTimeUtils {
 
-    public String convertDateToString(LocalDateTime now) {
-        if (Objects.nonNull(now)) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-            return now.format(formatter);
+    public String convertDateToString(LocalDateTime localDateTime) {
+        if (Objects.nonNull(localDateTime)) {
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            return localDateTime.format(dateTimeFormatter);
         } else {
             return null;
         }
     }
 
-    public LocalDateTime convertStringToDate(String str) {
+    public LocalDateTime convertStringToDate(String string) {
         try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-            return LocalDateTime.parse(str, formatter);
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            return LocalDateTime.parse(string, dateTimeFormatter);
         } catch (DateTimeParseException e) {
-            throw new InvalidValidationException("Date should be in form (yyyy-MM-dd HH:mm)");
+            throw new InvalidValidationException("Date and time should be in the following format: (yyyy-MM-dd HH:mm)");
         }
     }
 }
