@@ -56,5 +56,5 @@ REST API that allows to manage tasks.
 - **DONE**
 
 ## DateTime format
-- **Pattern** - yyyy-MM-dd HH-mm
+- **Pattern** - yyyy-MM-dd HH:mm
 - **Usage** - createdDate, dueDate
