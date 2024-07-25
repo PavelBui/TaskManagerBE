@@ -43,7 +43,7 @@ public class TaskServiceImpl implements TaskService {
         taskEntity.setIsDeleted(true);
         taskEntity.setDeleteDate(LocalDateTime.now());
         taskRepository.save(taskEntity);
-        return "Task deleted successfully";
+        return "Task was deleted successfully";
     }
 
     @Override
