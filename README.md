@@ -13,6 +13,13 @@ REST API that allows to manage tasks.
 - **Port** - 8081
 - **URL** - http://localhost:8081
 - **Swagger** - http://localhost:8081/swagger-ui/index.html
+- **DB console** - http://localhost:8081/h2-console
+
+## DB console connection parameters
+- **Driver Class** - org.h2.Driver
+- **JDBC URL** - jdbc:h2:mem:dcbapp
+- **User Name** - sa
+- **Password** - password
 
 ## Endpoints
 - **Create task** - POST request http://localhost:8081/tasks
@@ -39,8 +46,8 @@ REST API that allows to manage tasks.
     "content": "string",
     "priority": "LOW",
     "status": "DONE",
-    "createdDate": "string",
-    "dueDate": "string"
+    "createdDate": 0,
+    "dueDate": 0
 }
 ```
 
@@ -56,5 +63,5 @@ REST API that allows to manage tasks.
 - **DONE**
 
 ## DateTime format
-- **Pattern** - yyyy-MM-dd HH:mm
+- **Pattern** - timestamp
 - **Usage** - createdDate, dueDate
