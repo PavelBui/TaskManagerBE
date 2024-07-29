@@ -24,7 +24,7 @@ REST API that allows to manage tasks.
 ## Endpoints
 - **Create task** - POST request http://localhost:8081/tasks
     - `RequestBody: TaskDto`
-    - `ResponseBody: String` (Task was created successfully)
+    - `ResponseBody: TaskDto`
 - **Get task** - GET request http://localhost:8081/tasks/{id}
     - `PathVariable: task id`
     - `ResponseBody: TaskDto`
@@ -63,5 +63,5 @@ REST API that allows to manage tasks.
 - **DONE**
 
 ## DateTime format
-- **Pattern** - timestamp
+- **Pattern** - timestamp as a number of milliseconds since 1970-01-01 00:00:00 UTC
 - **Usage** - createdDate, dueDate

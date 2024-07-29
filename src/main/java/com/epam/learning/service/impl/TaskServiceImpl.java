@@ -20,11 +20,10 @@ public class TaskServiceImpl implements TaskService {
     private TaskMapper taskMapper;
 
     @Override
-    public String createTask(TaskDto taskDto) {
+    public TaskDto createTask(TaskDto taskDto) {
         TaskEntity taskEntity = taskMapper.dtoToEntity(taskDto);
-        taskEntity.setCreateDate(LocalDateTime.now());
-        taskRepository.save(taskEntity);
-        return "Task was created successfully";
+        TaskEntity savedTaskEntity = taskRepository.save(taskEntity);
+        return taskMapper.entityToDto(savedTaskEntity);
     }
 
     @Override
